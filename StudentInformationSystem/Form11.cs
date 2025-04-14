@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace StudentInformationSystem
 {
-    public partial class StudentsForm : Form
+    public partial class Form11 : Form
     {
-        public StudentsForm()
+        public Form11()
         {
             InitializeComponent();
-        }
-
-        private void Form6_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

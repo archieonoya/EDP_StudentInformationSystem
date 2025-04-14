@@ -1,11 +1,1 @@
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.exe.config
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.exe
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.pdb
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.AssemblyReference.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.LoginForm.resources
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.Properties.Resources.resources
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.GenerateResource.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.CoreCompileInputs.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.exe
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.pdb
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.DashboardForm.resources

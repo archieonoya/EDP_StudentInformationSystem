@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace StudentInformationSystem
 {
-    public partial class StudentsForm : Form
+    public partial class EnrollmentsForm : Form
     {
-        public StudentsForm()
+        public EnrollmentsForm()
         {
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
+        private void lblTitle_Click(object sender, EventArgs e)
         {
 
         }

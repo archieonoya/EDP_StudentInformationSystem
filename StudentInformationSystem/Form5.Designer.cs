@@ -1,6 +1,6 @@
 ﻿namespace StudentInformationSystem
 {
-    partial class DashboardForm
+    partial class Form5
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlSide = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnManageStudents = new System.Windows.Forms.Button();
             this.btnViewLogs = new System.Windows.Forms.Button();
-            this.btnManageProfessor = new System.Windows.Forms.Button();
             this.btnViewStats = new System.Windows.Forms.Button();
-            this.btnManageDepartments = new System.Windows.Forms.Button();
-            this.btnViewEnrollments = new System.Windows.Forms.Button();
-            this.btnManageClassrooms = new System.Windows.Forms.Button();
+            this.btnManageEnrollments = new System.Windows.Forms.Button();
             this.btnManageSchedules = new System.Windows.Forms.Button();
             this.btnManageSubjects = new System.Windows.Forms.Button();
+            this.btnManageClassrooms = new System.Windows.Forms.Button();
+            this.btnManageDepartments = new System.Windows.Forms.Button();
+            this.btnManageProfessor = new System.Windows.Forms.Button();
+            this.btnManageStudents = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblSubtitleRecentLogs = new System.Windows.Forms.Label();
             this.lblTotalEnrollments = new System.Windows.Forms.Label();
@@ -51,42 +50,29 @@
             this.lblTotalStudents = new System.Windows.Forms.Label();
             this.lblSubtitleSummary = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pnlSide.SuspendLayout();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlSide
+            // panel1
             // 
-            this.pnlSide.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlSide.Controls.Add(this.btnDashboard);
-            this.pnlSide.Controls.Add(this.btnLogout);
-            this.pnlSide.Controls.Add(this.btnManageStudents);
-            this.pnlSide.Controls.Add(this.btnViewLogs);
-            this.pnlSide.Controls.Add(this.btnManageProfessor);
-            this.pnlSide.Controls.Add(this.btnViewStats);
-            this.pnlSide.Controls.Add(this.btnManageDepartments);
-            this.pnlSide.Controls.Add(this.btnViewEnrollments);
-            this.pnlSide.Controls.Add(this.btnManageClassrooms);
-            this.pnlSide.Controls.Add(this.btnManageSchedules);
-            this.pnlSide.Controls.Add(this.btnManageSubjects);
-            this.pnlSide.Location = new System.Drawing.Point(1, 0);
-            this.pnlSide.Name = "pnlSide";
-            this.pnlSide.Size = new System.Drawing.Size(249, 749);
-            this.pnlSide.TabIndex = 0;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(22, 60);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(205, 40);
-            this.btnDashboard.TabIndex = 22;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnManageStudents);
+            this.panel1.Controls.Add(this.btnViewLogs);
+            this.panel1.Controls.Add(this.btnManageProfessor);
+            this.panel1.Controls.Add(this.btnViewStats);
+            this.panel1.Controls.Add(this.btnManageDepartments);
+            this.panel1.Controls.Add(this.btnManageEnrollments);
+            this.panel1.Controls.Add(this.btnManageClassrooms);
+            this.panel1.Controls.Add(this.btnManageSchedules);
+            this.panel1.Controls.Add(this.btnManageSubjects);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(249, 749);
+            this.panel1.TabIndex = 0;
             // 
             // btnLogout
             // 
@@ -103,21 +89,6 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnManageStudents
-            // 
-            this.btnManageStudents.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnManageStudents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnManageStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageStudents.ForeColor = System.Drawing.Color.White;
-            this.btnManageStudents.Location = new System.Drawing.Point(22, 114);
-            this.btnManageStudents.Margin = new System.Windows.Forms.Padding(0);
-            this.btnManageStudents.Name = "btnManageStudents";
-            this.btnManageStudents.Size = new System.Drawing.Size(205, 40);
-            this.btnManageStudents.TabIndex = 12;
-            this.btnManageStudents.Text = "Manage Students";
-            this.btnManageStudents.UseVisualStyleBackColor = false;
-            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
-            // 
             // btnViewLogs
             // 
             this.btnViewLogs.BackColor = System.Drawing.Color.SteelBlue;
@@ -132,21 +103,6 @@
             this.btnViewLogs.Text = "View Logs";
             this.btnViewLogs.UseVisualStyleBackColor = false;
             this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
-            // 
-            // btnManageProfessor
-            // 
-            this.btnManageProfessor.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnManageProfessor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnManageProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageProfessor.ForeColor = System.Drawing.Color.White;
-            this.btnManageProfessor.Location = new System.Drawing.Point(22, 167);
-            this.btnManageProfessor.Margin = new System.Windows.Forms.Padding(0);
-            this.btnManageProfessor.Name = "btnManageProfessor";
-            this.btnManageProfessor.Size = new System.Drawing.Size(205, 40);
-            this.btnManageProfessor.TabIndex = 13;
-            this.btnManageProfessor.Text = "Manage Professors";
-            this.btnManageProfessor.UseVisualStyleBackColor = false;
-            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
             // 
             // btnViewStats
             // 
@@ -163,50 +119,20 @@
             this.btnViewStats.UseVisualStyleBackColor = false;
             this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
-            // btnManageDepartments
+            // btnManageEnrollments
             // 
-            this.btnManageDepartments.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnManageDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnManageDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageDepartments.ForeColor = System.Drawing.Color.White;
-            this.btnManageDepartments.Location = new System.Drawing.Point(22, 219);
-            this.btnManageDepartments.Margin = new System.Windows.Forms.Padding(0);
-            this.btnManageDepartments.Name = "btnManageDepartments";
-            this.btnManageDepartments.Size = new System.Drawing.Size(205, 40);
-            this.btnManageDepartments.TabIndex = 14;
-            this.btnManageDepartments.Text = "Manage Departments";
-            this.btnManageDepartments.UseVisualStyleBackColor = false;
-            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
-            // 
-            // btnViewEnrollments
-            // 
-            this.btnViewEnrollments.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnViewEnrollments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnViewEnrollments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewEnrollments.ForeColor = System.Drawing.Color.White;
-            this.btnViewEnrollments.Location = new System.Drawing.Point(22, 422);
-            this.btnViewEnrollments.Margin = new System.Windows.Forms.Padding(0);
-            this.btnViewEnrollments.Name = "btnViewEnrollments";
-            this.btnViewEnrollments.Size = new System.Drawing.Size(205, 40);
-            this.btnViewEnrollments.TabIndex = 18;
-            this.btnViewEnrollments.Text = "View Enrollments";
-            this.btnViewEnrollments.UseVisualStyleBackColor = false;
-            this.btnViewEnrollments.Click += new System.EventHandler(this.btnManageEnrollments_Click);
-            // 
-            // btnManageClassrooms
-            // 
-            this.btnManageClassrooms.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnManageClassrooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnManageClassrooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageClassrooms.ForeColor = System.Drawing.Color.White;
-            this.btnManageClassrooms.Location = new System.Drawing.Point(22, 272);
-            this.btnManageClassrooms.Margin = new System.Windows.Forms.Padding(0);
-            this.btnManageClassrooms.Name = "btnManageClassrooms";
-            this.btnManageClassrooms.Size = new System.Drawing.Size(205, 40);
-            this.btnManageClassrooms.TabIndex = 15;
-            this.btnManageClassrooms.Text = "Manage Classrooms";
-            this.btnManageClassrooms.UseVisualStyleBackColor = false;
-            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
+            this.btnManageEnrollments.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageEnrollments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageEnrollments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageEnrollments.ForeColor = System.Drawing.Color.White;
+            this.btnManageEnrollments.Location = new System.Drawing.Point(22, 422);
+            this.btnManageEnrollments.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageEnrollments.Name = "btnManageEnrollments";
+            this.btnManageEnrollments.Size = new System.Drawing.Size(205, 40);
+            this.btnManageEnrollments.TabIndex = 18;
+            this.btnManageEnrollments.Text = "Manage Enrollments";
+            this.btnManageEnrollments.UseVisualStyleBackColor = false;
+            this.btnManageEnrollments.Click += new System.EventHandler(this.btnManageEnrollments_Click);
             // 
             // btnManageSchedules
             // 
@@ -237,6 +163,66 @@
             this.btnManageSubjects.Text = "Manage Subjects";
             this.btnManageSubjects.UseVisualStyleBackColor = false;
             this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
+            // 
+            // btnManageClassrooms
+            // 
+            this.btnManageClassrooms.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageClassrooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageClassrooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageClassrooms.ForeColor = System.Drawing.Color.White;
+            this.btnManageClassrooms.Location = new System.Drawing.Point(22, 272);
+            this.btnManageClassrooms.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageClassrooms.Name = "btnManageClassrooms";
+            this.btnManageClassrooms.Size = new System.Drawing.Size(205, 40);
+            this.btnManageClassrooms.TabIndex = 15;
+            this.btnManageClassrooms.Text = "Manage Classrooms";
+            this.btnManageClassrooms.UseVisualStyleBackColor = false;
+            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
+            // 
+            // btnManageDepartments
+            // 
+            this.btnManageDepartments.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageDepartments.ForeColor = System.Drawing.Color.White;
+            this.btnManageDepartments.Location = new System.Drawing.Point(22, 219);
+            this.btnManageDepartments.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageDepartments.Name = "btnManageDepartments";
+            this.btnManageDepartments.Size = new System.Drawing.Size(205, 40);
+            this.btnManageDepartments.TabIndex = 14;
+            this.btnManageDepartments.Text = "Manage Departments";
+            this.btnManageDepartments.UseVisualStyleBackColor = false;
+            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
+            // 
+            // btnManageProfessor
+            // 
+            this.btnManageProfessor.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageProfessor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageProfessor.ForeColor = System.Drawing.Color.White;
+            this.btnManageProfessor.Location = new System.Drawing.Point(22, 167);
+            this.btnManageProfessor.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageProfessor.Name = "btnManageProfessor";
+            this.btnManageProfessor.Size = new System.Drawing.Size(205, 40);
+            this.btnManageProfessor.TabIndex = 13;
+            this.btnManageProfessor.Text = "Manage Professors";
+            this.btnManageProfessor.UseVisualStyleBackColor = false;
+            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
+            // 
+            // btnManageStudents
+            // 
+            this.btnManageStudents.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageStudents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageStudents.ForeColor = System.Drawing.Color.White;
+            this.btnManageStudents.Location = new System.Drawing.Point(22, 114);
+            this.btnManageStudents.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageStudents.Name = "btnManageStudents";
+            this.btnManageStudents.Size = new System.Drawing.Size(205, 40);
+            this.btnManageStudents.TabIndex = 12;
+            this.btnManageStudents.Text = "Manage Students";
+            this.btnManageStudents.UseVisualStyleBackColor = false;
+            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // dataGridView1
             // 
@@ -353,7 +339,21 @@
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Admin Dashboard";
             // 
-            // DashboardForm
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Location = new System.Drawing.Point(22, 60);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(205, 40);
+            this.btnDashboard.TabIndex = 22;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -369,12 +369,11 @@
             this.Controls.Add(this.lblTotalProfessors);
             this.Controls.Add(this.lblTotalStudents);
             this.Controls.Add(this.lblSubtitleSummary);
-            this.Controls.Add(this.pnlSide);
-            this.Name = "DashboardForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student Information System - Admin Dashboard";
+            this.Controls.Add(this.panel1);
+            this.Name = "Form5";
+            this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
-            this.pnlSide.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,11 +382,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlSide;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnViewLogs;
         private System.Windows.Forms.Button btnViewStats;
-        private System.Windows.Forms.Button btnViewEnrollments;
+        private System.Windows.Forms.Button btnManageEnrollments;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
         private System.Windows.Forms.Button btnManageClassrooms;
