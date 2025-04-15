@@ -16,7 +16,10 @@ namespace StudentInformationSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashboardForm());
+
+            // Start the application with the LoginForm
+            LoginForm loginForm = new LoginForm();
+            Application.Run(loginForm);
         }
     }
 }
