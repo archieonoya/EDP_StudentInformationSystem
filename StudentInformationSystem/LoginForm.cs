@@ -75,7 +75,7 @@ namespace StudentInformationSystem
                             successForm.Show();
 
                             Timer timer = new Timer();
-                            timer.Interval = 5000; // 5 seconds
+                            timer.Interval = 2000; // 2 seconds
                             timer.Tick += (s, args) =>
                             {
                                 timer.Stop();
