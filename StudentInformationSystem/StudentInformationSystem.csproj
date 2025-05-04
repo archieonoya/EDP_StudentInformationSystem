@@ -129,6 +129,12 @@
     <Compile Include="EnrollmentStatsForm.Designer.cs">
       <DependentUpon>EnrollmentStatsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnrollStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollStudent.Designer.cs">
+      <DependentUpon>EnrollStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnrollmentStatsForm.resx">
       <DependentUpon>EnrollmentStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollStudent.resx">
+      <DependentUpon>EnrollStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

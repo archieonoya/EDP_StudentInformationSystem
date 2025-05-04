@@ -51,3 +51,4 @@ C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformation
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.CopyComplete
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.EnrollStudent.resources
