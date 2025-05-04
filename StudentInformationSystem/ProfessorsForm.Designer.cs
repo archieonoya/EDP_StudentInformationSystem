@@ -51,8 +51,6 @@
             this.lblContact = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
-            this.lblMiddleName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessors)).BeginInit();
@@ -113,6 +111,7 @@
             this.btnDashboard.TabIndex = 22;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnLogout
             // 
@@ -127,6 +126,7 @@
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnManageStudents
             // 
@@ -141,6 +141,7 @@
             this.btnManageStudents.TabIndex = 12;
             this.btnManageStudents.Text = "Manage Students";
             this.btnManageStudents.UseVisualStyleBackColor = false;
+            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // btnViewLogs
             // 
@@ -155,6 +156,7 @@
             this.btnViewLogs.TabIndex = 20;
             this.btnViewLogs.Text = "View Logs";
             this.btnViewLogs.UseVisualStyleBackColor = false;
+            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
             // 
             // btnManageProfessor
             // 
@@ -169,6 +171,7 @@
             this.btnManageProfessor.TabIndex = 13;
             this.btnManageProfessor.Text = "Manage Professors";
             this.btnManageProfessor.UseVisualStyleBackColor = false;
+            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
             // 
             // btnViewStats
             // 
@@ -183,6 +186,7 @@
             this.btnViewStats.TabIndex = 19;
             this.btnViewStats.Text = "View Enrollment Stats";
             this.btnViewStats.UseVisualStyleBackColor = false;
+            this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
             // btnManageDepartments
             // 
@@ -197,6 +201,7 @@
             this.btnManageDepartments.TabIndex = 14;
             this.btnManageDepartments.Text = "Manage Departments";
             this.btnManageDepartments.UseVisualStyleBackColor = false;
+            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
             // 
             // btnViewEnrollments
             // 
@@ -211,6 +216,7 @@
             this.btnViewEnrollments.TabIndex = 18;
             this.btnViewEnrollments.Text = "View Enrollments";
             this.btnViewEnrollments.UseVisualStyleBackColor = false;
+            this.btnViewEnrollments.Click += new System.EventHandler(this.btnViewEnrollments_Click);
             // 
             // btnManageClassrooms
             // 
@@ -225,6 +231,7 @@
             this.btnManageClassrooms.TabIndex = 15;
             this.btnManageClassrooms.Text = "Manage Classrooms";
             this.btnManageClassrooms.UseVisualStyleBackColor = false;
+            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
             // 
             // btnManageSchedules
             // 
@@ -239,6 +246,7 @@
             this.btnManageSchedules.TabIndex = 17;
             this.btnManageSchedules.Text = "Manage Schedules";
             this.btnManageSchedules.UseVisualStyleBackColor = false;
+            this.btnManageSchedules.Click += new System.EventHandler(this.btnManageSchedules_Click);
             // 
             // btnManageSubjects
             // 
@@ -253,19 +261,21 @@
             this.btnManageSubjects.TabIndex = 16;
             this.btnManageSubjects.Text = "Manage Subjects";
             this.btnManageSubjects.UseVisualStyleBackColor = false;
+            this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(551, 391);
+            this.btnAdd.Location = new System.Drawing.Point(551, 359);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(130, 35);
             this.btnAdd.TabIndex = 121;
             this.btnAdd.Text = "Add Professor";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtDepartmentId
             // 
-            this.txtDepartmentId.Location = new System.Drawing.Point(481, 325);
+            this.txtDepartmentId.Location = new System.Drawing.Point(481, 293);
             this.txtDepartmentId.Name = "txtDepartmentId";
             this.txtDepartmentId.Size = new System.Drawing.Size(200, 22);
             this.txtDepartmentId.TabIndex = 120;
@@ -273,7 +283,7 @@
             // lblDepartmentId
             // 
             this.lblDepartmentId.AutoSize = true;
-            this.lblDepartmentId.Location = new System.Drawing.Point(296, 331);
+            this.lblDepartmentId.Location = new System.Drawing.Point(296, 299);
             this.lblDepartmentId.Name = "lblDepartmentId";
             this.lblDepartmentId.Size = new System.Drawing.Size(96, 16);
             this.lblDepartmentId.TabIndex = 119;
@@ -281,7 +291,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(481, 287);
+            this.txtEmail.Location = new System.Drawing.Point(481, 255);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
             this.txtEmail.TabIndex = 118;
@@ -289,7 +299,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(296, 293);
+            this.lblEmail.Location = new System.Drawing.Point(296, 261);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(44, 16);
             this.lblEmail.TabIndex = 117;
@@ -297,7 +307,7 @@
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(481, 250);
+            this.txtContact.Location = new System.Drawing.Point(481, 218);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(200, 22);
             this.txtContact.TabIndex = 116;
@@ -305,7 +315,7 @@
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(296, 256);
+            this.lblContact.Location = new System.Drawing.Point(296, 224);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(106, 16);
             this.lblContact.TabIndex = 115;
@@ -313,7 +323,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(481, 209);
+            this.txtLastName.Location = new System.Drawing.Point(481, 177);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(200, 22);
             this.txtLastName.TabIndex = 114;
@@ -321,27 +331,11 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(296, 212);
+            this.lblLastName.Location = new System.Drawing.Point(296, 180);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(75, 16);
             this.lblLastName.TabIndex = 113;
             this.lblLastName.Text = "Last Name:";
-            // 
-            // txtMiddleName
-            // 
-            this.txtMiddleName.Location = new System.Drawing.Point(481, 169);
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(200, 22);
-            this.txtMiddleName.TabIndex = 112;
-            // 
-            // lblMiddleName
-            // 
-            this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Location = new System.Drawing.Point(296, 172);
-            this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(91, 16);
-            this.lblMiddleName.TabIndex = 111;
-            this.lblMiddleName.Text = "Middle Name:";
             // 
             // txtFirstName
             // 
@@ -373,8 +367,6 @@
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtMiddleName);
-            this.Controls.Add(this.lblMiddleName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.dgvProfessors);
@@ -383,6 +375,7 @@
             this.Name = "ProfessorsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Information System - Manage Professors";
+            this.Load += new System.EventHandler(this.ProfessorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessors)).EndInit();
             this.pnlSide.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -414,8 +407,6 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox txtMiddleName;
-        private System.Windows.Forms.Label lblMiddleName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblFirstName;
     }

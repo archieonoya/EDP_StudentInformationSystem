@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Configuration; // Required for ConfigurationManager
+using System.Configuration;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -12,12 +12,21 @@ namespace StudentInformationSystem
             InitializeComponent();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // Validate input
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 lblError.Text = "Please enter both username and password.";
@@ -26,14 +35,12 @@ namespace StudentInformationSystem
 
             try
             {
-                // Retrieve connection string from App.config
                 string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // Query to check if the username and password match an admin record
                     string query = "SELECT COUNT(*) FROM admins WHERE username = @username AND password = @password";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -44,18 +51,44 @@ namespace StudentInformationSystem
 
                         if (count > 0)
                         {
-                            // Successful login
                             lblError.Text = "";
-                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Open DashboardForm and hide LoginForm
-                            DashboardForm dashboard = new DashboardForm();
-                            dashboard.Show();
-                            this.Hide(); // Hide the login form instead of closing to prevent app termination
+                            Form successForm = new Form()
+                            {
+                                StartPosition = FormStartPosition.CenterScreen,
+                                Size = new System.Drawing.Size(300, 150),
+                                FormBorderStyle = FormBorderStyle.FixedDialog,
+                                Text = "Login Success",
+                                ControlBox = false,
+                                TopMost = true
+                            };
+
+                            Label lbl = new Label()
+                            {
+                                Text = "Login successful! Redirecting...",
+                                Dock = DockStyle.Fill,
+                                Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold),
+                                TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+                            };
+
+                            successForm.Controls.Add(lbl);
+                            successForm.Show();
+
+                            Timer timer = new Timer();
+                            timer.Interval = 5000; // 5 seconds
+                            timer.Tick += (s, args) =>
+                            {
+                                timer.Stop();
+                                successForm.Close();
+
+                                DashboardForm dashboard = new DashboardForm();
+                                dashboard.Show();
+                                this.Hide();
+                            };
+                            timer.Start();
                         }
                         else
                         {
-                            // Failed login
                             lblError.Text = "Invalid username or password.";
                         }
                     }
@@ -73,13 +106,11 @@ namespace StudentInformationSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // Clear error label on form load
             lblError.Text = "";
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            // Clear error label when password changes
             lblError.Text = "";
         }
 
