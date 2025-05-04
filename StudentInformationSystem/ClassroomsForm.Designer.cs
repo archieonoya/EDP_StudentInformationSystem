@@ -61,6 +61,7 @@
             this.btnAdd.TabIndex = 111;
             this.btnAdd.Text = "Add Classroom";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvClassrooms
             // 
@@ -116,6 +117,7 @@
             this.btnDashboard.TabIndex = 22;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnLogout
             // 
@@ -130,6 +132,7 @@
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnManageStudents
             // 
@@ -144,6 +147,7 @@
             this.btnManageStudents.TabIndex = 12;
             this.btnManageStudents.Text = "Manage Students";
             this.btnManageStudents.UseVisualStyleBackColor = false;
+            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // btnViewLogs
             // 
@@ -158,6 +162,7 @@
             this.btnViewLogs.TabIndex = 20;
             this.btnViewLogs.Text = "View Logs";
             this.btnViewLogs.UseVisualStyleBackColor = false;
+            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
             // 
             // btnManageProfessor
             // 
@@ -172,6 +177,7 @@
             this.btnManageProfessor.TabIndex = 13;
             this.btnManageProfessor.Text = "Manage Professors";
             this.btnManageProfessor.UseVisualStyleBackColor = false;
+            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
             // 
             // btnViewStats
             // 
@@ -186,6 +192,7 @@
             this.btnViewStats.TabIndex = 19;
             this.btnViewStats.Text = "View Enrollment Stats";
             this.btnViewStats.UseVisualStyleBackColor = false;
+            this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
             // btnManageDepartments
             // 
@@ -200,6 +207,7 @@
             this.btnManageDepartments.TabIndex = 14;
             this.btnManageDepartments.Text = "Manage Departments";
             this.btnManageDepartments.UseVisualStyleBackColor = false;
+            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
             // 
             // btnViewEnrollments
             // 
@@ -214,6 +222,7 @@
             this.btnViewEnrollments.TabIndex = 18;
             this.btnViewEnrollments.Text = "View Enrollments";
             this.btnViewEnrollments.UseVisualStyleBackColor = false;
+            this.btnViewEnrollments.Click += new System.EventHandler(this.btnViewEnrollments_Click);
             // 
             // btnManageClassrooms
             // 
@@ -228,6 +237,7 @@
             this.btnManageClassrooms.TabIndex = 15;
             this.btnManageClassrooms.Text = "Manage Classrooms";
             this.btnManageClassrooms.UseVisualStyleBackColor = false;
+            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
             // 
             // btnManageSchedules
             // 
@@ -242,6 +252,7 @@
             this.btnManageSchedules.TabIndex = 17;
             this.btnManageSchedules.Text = "Manage Schedules";
             this.btnManageSchedules.UseVisualStyleBackColor = false;
+            this.btnManageSchedules.Click += new System.EventHandler(this.btnManageSchedules_Click);
             // 
             // btnManageSubjects
             // 
@@ -256,6 +267,7 @@
             this.btnManageSubjects.TabIndex = 16;
             this.btnManageSubjects.Text = "Manage Subjects";
             this.btnManageSubjects.UseVisualStyleBackColor = false;
+            this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
             // txtCapacity
             // 
