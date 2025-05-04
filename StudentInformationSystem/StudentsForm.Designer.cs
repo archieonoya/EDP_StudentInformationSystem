@@ -534,7 +534,7 @@
             this.Name = "StudentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Information System - Manage Students";
-            this.Load += new System.EventHandler(this.Form6_Load);
+            this.Load += new System.EventHandler(this.StudentsForm_Load);
             this.pnlSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);

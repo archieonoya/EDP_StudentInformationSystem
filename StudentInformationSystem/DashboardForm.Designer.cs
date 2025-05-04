@@ -191,7 +191,7 @@
             this.btnViewEnrollments.TabIndex = 18;
             this.btnViewEnrollments.Text = "View Enrollments";
             this.btnViewEnrollments.UseVisualStyleBackColor = false;
-            this.btnViewEnrollments.Click += new System.EventHandler(this.btnManageEnrollments_Click);
+            this.btnViewEnrollments.Click += new System.EventHandler(this.btnViewEnrollments_Click);
             // 
             // btnManageClassrooms
             // 
@@ -267,7 +267,7 @@
             // 
             this.lblTotalEnrollments.AutoSize = true;
             this.lblTotalEnrollments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEnrollments.Location = new System.Drawing.Point(1055, 176);
+            this.lblTotalEnrollments.Location = new System.Drawing.Point(1053, 168);
             this.lblTotalEnrollments.Name = "lblTotalEnrollments";
             this.lblTotalEnrollments.Size = new System.Drawing.Size(179, 20);
             this.lblTotalEnrollments.TabIndex = 29;
@@ -317,7 +317,7 @@
             // 
             this.lblTotalProfessors.AutoSize = true;
             this.lblTotalProfessors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProfessors.Location = new System.Drawing.Point(327, 209);
+            this.lblTotalProfessors.Location = new System.Drawing.Point(322, 209);
             this.lblTotalProfessors.Name = "lblTotalProfessors";
             this.lblTotalProfessors.Size = new System.Drawing.Size(171, 20);
             this.lblTotalProfessors.TabIndex = 24;
@@ -327,7 +327,7 @@
             // 
             this.lblTotalStudents.AutoSize = true;
             this.lblTotalStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalStudents.Location = new System.Drawing.Point(327, 168);
+            this.lblTotalStudents.Location = new System.Drawing.Point(322, 168);
             this.lblTotalStudents.Name = "lblTotalStudents";
             this.lblTotalStudents.Size = new System.Drawing.Size(153, 20);
             this.lblTotalStudents.TabIndex = 23;
@@ -373,7 +373,7 @@
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Information System - Admin Dashboard";
-            this.Load += new System.EventHandler(this.Form5_Load);
+            this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.pnlSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
