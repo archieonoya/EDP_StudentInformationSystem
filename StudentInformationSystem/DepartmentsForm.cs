@@ -8,6 +8,7 @@ namespace StudentInformationSystem
     public partial class DepartmentsForm : Form
     {
         private int loggedInAdminId = 1; // Placeholder for admin_id; replace with actual session value
+        private string selectedDepartment;
 
         public DepartmentsForm()
         {
@@ -79,6 +80,63 @@ namespace StudentInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedDepartment))
+            {
+                MessageBox.Show("Please select a department to delete.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete department '{selectedDepartment}'?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+                return;
+
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string deleteQuery = "DELETE FROM departments WHERE department_name = @department_name";
+                    using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@department_name", selectedDepartment);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Department deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            selectedDepartment = null;
+                            LoadDepartments();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Department not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvDepartments_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDepartments.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvDepartments.SelectedRows[0];
+                selectedDepartment = row.Cells["department_name"].Value.ToString();
+                txtDepartmentName.Text = selectedDepartment;
             }
         }
 

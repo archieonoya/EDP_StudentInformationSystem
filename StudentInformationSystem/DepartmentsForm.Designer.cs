@@ -45,6 +45,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
             this.lblDepartmentName = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.dgvDepartments.RowTemplate.Height = 24;
             this.dgvDepartments.Size = new System.Drawing.Size(550, 553);
             this.dgvDepartments.TabIndex = 102;
+            this.dgvDepartments.SelectionChanged += new System.EventHandler(this.dgvDepartments_SelectionChanged);
             // 
             // lblTitle
             // 
@@ -281,11 +283,22 @@
             this.lblDepartmentName.TabIndex = 103;
             this.lblDepartmentName.Text = "Department Name:";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(547, 235);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(130, 35);
+            this.btnDelete.TabIndex = 106;
+            this.btnDelete.Text = "Delete Department";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // DepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDepartmentName);
             this.Controls.Add(this.lblDepartmentName);
@@ -300,7 +313,6 @@
             this.pnlSide.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -322,5 +334,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDepartmentName;
         private System.Windows.Forms.Label lblDepartmentName;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -228,10 +228,80 @@ namespace StudentInformationSystem
             ClearInputs();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             DashboardForm dashboardForm = new DashboardForm();
             dashboardForm.Show();
+            this.Close();
+        }
+
+        private void btnManageStudents_Click(object sender, EventArgs e)
+        {
+            StudentsForm studentsForm = new StudentsForm();
+            studentsForm.Show();
+            this.Close();
+        }
+
+        private void btnManageProfessor_Click(object sender, EventArgs e)
+        {
+            ProfessorsForm professorsForm = new ProfessorsForm();
+            professorsForm.Show();
+            this.Close();
+        }
+
+        private void btnManageDepartments_Click(object sender, EventArgs e)
+        {
+            DepartmentsForm departmentsForm = new DepartmentsForm();
+            departmentsForm.Show();
+            this.Close();
+        }
+
+        private void btnManageClassrooms_Click(object sender, EventArgs e)
+        {
+            ClassroomsForm classroomForm = new ClassroomsForm();
+            classroomForm.Show();
+            this.Close();
+        }
+
+        private void btnManageSubjects_Click(object sender, EventArgs e)
+        {
+            SubjectsForm subjectsForm = new SubjectsForm();
+            subjectsForm.Show();
+            this.Close();
+        }
+
+        private void btnManageSchedules_Click(object sender, EventArgs e)
+        {
+            SchedulesForm schedulesForm = new SchedulesForm();
+            schedulesForm.Show();
+            this.Close();
+        }
+
+        private void btnViewEnrollments_Click(object sender, EventArgs e)
+        {
+            EnrollmentsForm enrollmentsForm = new EnrollmentsForm();
+            enrollmentsForm.Show();
+            this.Close();
+        }
+
+        private void btnViewStats_Click(object sender, EventArgs e)
+        {
+            EnrollmentStatsForm statsForm = new EnrollmentStatsForm();
+            statsForm.Show();
+            this.Close();
+        }
+
+        private void btnViewLogs_Click(object sender, EventArgs e)
+        {
+            LogsForm logsForm = new LogsForm();
+            logsForm.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
             this.Close();
         }
     }
