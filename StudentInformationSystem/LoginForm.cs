@@ -35,7 +35,12 @@ namespace StudentInformationSystem
 
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"]?.ConnectionString;
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    lblError.Text = "Connection string not found in configuration.";
+                    return;
+                }
 
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
@@ -97,10 +102,12 @@ namespace StudentInformationSystem
             catch (MySqlException ex)
             {
                 lblError.Text = "Database error: " + ex.Message;
+                MessageBox.Show($"MySQL Error: {ex.Message}\nError Code: {ex.Number}\nStack Trace: {ex.StackTrace}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 lblError.Text = "Error: " + ex.Message;
+                MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -120,5 +127,61 @@ namespace StudentInformationSystem
         private void lblTitle_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click_1(object sender, EventArgs e) { }
+
+        private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string username = txtUsername.Text.Trim();
+            if (string.IsNullOrEmpty(username))
+            {
+                lblError.Text = "Please enter your username first.";
+                return;
+            }
+
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"]?.ConnectionString;
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    lblError.Text = "Connection string not found in configuration.";
+                    return;
+                }
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT email FROM admins WHERE username = @username";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        string email = cmd.ExecuteScalar()?.ToString();
+
+                        if (!string.IsNullOrEmpty(email))
+                        {
+                            // Simulate generating a reset code (in a real app, use a secure random code and email service)
+                            string resetCode = Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+                            MessageBox.Show($"A recovery code has been sent to {email}. Please use code: {resetCode}", "Password Recovery", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Open recovery form with the username and reset code
+                            PasswordRecoveryForm recoveryForm = new PasswordRecoveryForm(username, resetCode);
+                            recoveryForm.ShowDialog();
+                        }
+                        else
+                        {
+                            lblError.Text = "Username not found.";
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                lblError.Text = "Database error: " + ex.Message;
+                MessageBox.Show($"MySQL Error: {ex.Message}\nError Code: {ex.Number}\nStack Trace: {ex.StackTrace}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "Error: " + ex.Message;
+                MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

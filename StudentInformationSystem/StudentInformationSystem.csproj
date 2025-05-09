@@ -147,6 +147,12 @@
     <Compile Include="LogsForm.Designer.cs">
       <DependentUpon>LogsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordRecoveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordRecoveryForm.Designer.cs">
+      <DependentUpon>PasswordRecoveryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfessorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogsForm.resx">
       <DependentUpon>LogsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordRecoveryForm.resx">
+      <DependentUpon>PasswordRecoveryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfessorsForm.resx">
       <DependentUpon>ProfessorsForm.cs</DependentUpon>
