@@ -1,6 +1,6 @@
 ﻿namespace StudentInformationSystem
 {
-    partial class ClassroomsForm
+    partial class Form14
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvClassrooms = new System.Windows.Forms.DataGridView();
+            this.dgvLogs = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -43,49 +42,31 @@
             this.btnManageClassrooms = new System.Windows.Forms.Button();
             this.btnManageSchedules = new System.Windows.Forms.Button();
             this.btnManageSubjects = new System.Windows.Forms.Button();
-            this.txtCapacity = new System.Windows.Forms.TextBox();
-            this.lblCapacity = new System.Windows.Forms.Label();
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
-            this.lblRoomNumber = new System.Windows.Forms.Label();
-            this.txtBuilding = new System.Windows.Forms.TextBox();
-            this.lblBuilding = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClassrooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // dgvLogs
             // 
-            this.btnAdd.Location = new System.Drawing.Point(548, 275);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(130, 35);
-            this.btnAdd.TabIndex = 111;
-            this.btnAdd.Text = "Add Classroom";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dgvClassrooms
-            // 
-            this.dgvClassrooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClassrooms.BackgroundColor = System.Drawing.SystemColors.MenuBar;
-            this.dgvClassrooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClassrooms.Location = new System.Drawing.Point(715, 132);
-            this.dgvClassrooms.Name = "dgvClassrooms";
-            this.dgvClassrooms.RowHeadersWidth = 51;
-            this.dgvClassrooms.RowTemplate.Height = 24;
-            this.dgvClassrooms.Size = new System.Drawing.Size(550, 553);
-            this.dgvClassrooms.TabIndex = 108;
-            this.dgvClassrooms.SelectionChanged += new System.EventHandler(this.dgvClassrooms_SelectionChanged);
+            this.dgvLogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLogs.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogs.Location = new System.Drawing.Point(293, 133);
+            this.dgvLogs.Name = "dgvLogs";
+            this.dgvLogs.RowHeadersWidth = 51;
+            this.dgvLogs.RowTemplate.Height = 24;
+            this.dgvLogs.Size = new System.Drawing.Size(971, 553);
+            this.dgvLogs.TabIndex = 157;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(288, 59);
+            this.lblTitle.Location = new System.Drawing.Point(287, 60);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(290, 33);
-            this.lblTitle.TabIndex = 107;
-            this.lblTitle.Text = "Manage Classrooms";
+            this.lblTitle.Size = new System.Drawing.Size(190, 33);
+            this.lblTitle.TabIndex = 156;
+            this.lblTitle.Text = "System Logs";
             // 
             // pnlSide
             // 
@@ -101,10 +82,10 @@
             this.pnlSide.Controls.Add(this.btnManageClassrooms);
             this.pnlSide.Controls.Add(this.btnManageSchedules);
             this.pnlSide.Controls.Add(this.btnManageSubjects);
-            this.pnlSide.Location = new System.Drawing.Point(1, 0);
+            this.pnlSide.Location = new System.Drawing.Point(0, 1);
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(249, 749);
-            this.pnlSide.TabIndex = 106;
+            this.pnlSide.TabIndex = 155;
             // 
             // btnDashboard
             // 
@@ -119,7 +100,6 @@
             this.btnDashboard.TabIndex = 22;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnLogout
             // 
@@ -134,7 +114,6 @@
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnManageStudents
             // 
@@ -149,11 +128,10 @@
             this.btnManageStudents.TabIndex = 12;
             this.btnManageStudents.Text = "Manage Students";
             this.btnManageStudents.UseVisualStyleBackColor = false;
-            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // btnViewLogs
             // 
-            this.btnViewLogs.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewLogs.BackColor = System.Drawing.Color.SkyBlue;
             this.btnViewLogs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnViewLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewLogs.ForeColor = System.Drawing.Color.White;
@@ -164,7 +142,6 @@
             this.btnViewLogs.TabIndex = 20;
             this.btnViewLogs.Text = "View Logs";
             this.btnViewLogs.UseVisualStyleBackColor = false;
-            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
             // 
             // btnManageProfessor
             // 
@@ -179,7 +156,6 @@
             this.btnManageProfessor.TabIndex = 13;
             this.btnManageProfessor.Text = "Manage Professors";
             this.btnManageProfessor.UseVisualStyleBackColor = false;
-            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
             // 
             // btnViewStats
             // 
@@ -194,7 +170,6 @@
             this.btnViewStats.TabIndex = 19;
             this.btnViewStats.Text = "View Enrollment Stats";
             this.btnViewStats.UseVisualStyleBackColor = false;
-            this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
             // btnManageDepartments
             // 
@@ -209,7 +184,6 @@
             this.btnManageDepartments.TabIndex = 14;
             this.btnManageDepartments.Text = "Manage Departments";
             this.btnManageDepartments.UseVisualStyleBackColor = false;
-            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
             // 
             // btnViewEnrollments
             // 
@@ -224,11 +198,10 @@
             this.btnViewEnrollments.TabIndex = 18;
             this.btnViewEnrollments.Text = "View Enrollments";
             this.btnViewEnrollments.UseVisualStyleBackColor = false;
-            this.btnViewEnrollments.Click += new System.EventHandler(this.btnViewEnrollments_Click);
             // 
             // btnManageClassrooms
             // 
-            this.btnManageClassrooms.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnManageClassrooms.BackColor = System.Drawing.Color.SteelBlue;
             this.btnManageClassrooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnManageClassrooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageClassrooms.ForeColor = System.Drawing.Color.White;
@@ -239,7 +212,6 @@
             this.btnManageClassrooms.TabIndex = 15;
             this.btnManageClassrooms.Text = "Manage Classrooms";
             this.btnManageClassrooms.UseVisualStyleBackColor = false;
-            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
             // 
             // btnManageSchedules
             // 
@@ -254,7 +226,6 @@
             this.btnManageSchedules.TabIndex = 17;
             this.btnManageSchedules.Text = "Manage Schedules";
             this.btnManageSchedules.UseVisualStyleBackColor = false;
-            this.btnManageSchedules.Click += new System.EventHandler(this.btnManageSchedules_Click);
             // 
             // btnManageSubjects
             // 
@@ -269,96 +240,28 @@
             this.btnManageSubjects.TabIndex = 16;
             this.btnManageSubjects.Text = "Manage Subjects";
             this.btnManageSubjects.UseVisualStyleBackColor = false;
-            this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Location = new System.Drawing.Point(478, 216);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(200, 22);
-            this.txtCapacity.TabIndex = 120;
-            // 
-            // lblCapacity
-            // 
-            this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(293, 219);
-            this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(63, 16);
-            this.lblCapacity.TabIndex = 119;
-            this.lblCapacity.Text = "Capacity:";
-            // 
-            // txtRoomNumber
-            // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(478, 176);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(200, 22);
-            this.txtRoomNumber.TabIndex = 118;
-            // 
-            // lblRoomNumber
-            // 
-            this.lblRoomNumber.AutoSize = true;
-            this.lblRoomNumber.Location = new System.Drawing.Point(293, 179);
-            this.lblRoomNumber.Name = "lblRoomNumber";
-            this.lblRoomNumber.Size = new System.Drawing.Size(98, 16);
-            this.lblRoomNumber.TabIndex = 117;
-            this.lblRoomNumber.Text = "Room Number:";
-            // 
-            // txtBuilding
-            // 
-            this.txtBuilding.Location = new System.Drawing.Point(478, 139);
-            this.txtBuilding.Name = "txtBuilding";
-            this.txtBuilding.Size = new System.Drawing.Size(200, 22);
-            this.txtBuilding.TabIndex = 116;
-            // 
-            // lblBuilding
-            // 
-            this.lblBuilding.AutoSize = true;
-            this.lblBuilding.Location = new System.Drawing.Point(293, 142);
-            this.lblBuilding.Name = "lblBuilding";
-            this.lblBuilding.Size = new System.Drawing.Size(58, 16);
-            this.lblBuilding.TabIndex = 115;
-            this.lblBuilding.Text = "Building:";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(548, 320);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 35);
-            this.btnDelete.TabIndex = 121;
-            this.btnDelete.Text = "Delete Classroom";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // ClassroomsForm
+            // Form14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.txtCapacity);
-            this.Controls.Add(this.lblCapacity);
-            this.Controls.Add(this.txtRoomNumber);
-            this.Controls.Add(this.lblRoomNumber);
-            this.Controls.Add(this.txtBuilding);
-            this.Controls.Add(this.lblBuilding);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvClassrooms);
+            this.Controls.Add(this.dgvLogs);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlSide);
-            this.Name = "ClassroomsForm";
+            this.Name = "Form14";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student Information System - Manage Classrooms";
-            this.Load += new System.EventHandler(this.ClassroomsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClassrooms)).EndInit();
+            this.Text = "Form14";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
             this.pnlSide.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvClassrooms;
+        private System.Windows.Forms.DataGridView dgvLogs;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlSide;
         private System.Windows.Forms.Button btnDashboard;
@@ -366,18 +269,11 @@
         private System.Windows.Forms.Button btnManageStudents;
         private System.Windows.Forms.Button btnViewLogs;
         private System.Windows.Forms.Button btnManageProfessor;
+        private System.Windows.Forms.Button btnViewStats;
         private System.Windows.Forms.Button btnManageDepartments;
         private System.Windows.Forms.Button btnViewEnrollments;
         private System.Windows.Forms.Button btnManageClassrooms;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
-        private System.Windows.Forms.TextBox txtCapacity;
-        private System.Windows.Forms.Label lblCapacity;
-        private System.Windows.Forms.TextBox txtRoomNumber;
-        private System.Windows.Forms.Label lblRoomNumber;
-        private System.Windows.Forms.TextBox txtBuilding;
-        private System.Windows.Forms.Label lblBuilding;
-        private System.Windows.Forms.Button btnViewStats;
-        private System.Windows.Forms.Button btnDelete;
     }
 }

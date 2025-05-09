@@ -1,6 +1,6 @@
 ﻿namespace StudentInformationSystem
 {
-    partial class ClassroomsForm
+    partial class Form11
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblScheduleDay = new System.Windows.Forms.Label();
+            this.txtClassroomId = new System.Windows.Forms.TextBox();
+            this.lblClassroomId = new System.Windows.Forms.Label();
+            this.txtProfessorId = new System.Windows.Forms.TextBox();
+            this.lblProfessorId = new System.Windows.Forms.Label();
+            this.txtSubjectId = new System.Windows.Forms.TextBox();
+            this.lblSubjectId = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvClassrooms = new System.Windows.Forms.DataGridView();
+            this.dgvSchedules = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -43,39 +50,92 @@
             this.btnManageClassrooms = new System.Windows.Forms.Button();
             this.btnManageSchedules = new System.Windows.Forms.Button();
             this.btnManageSubjects = new System.Windows.Forms.Button();
-            this.txtCapacity = new System.Windows.Forms.TextBox();
-            this.lblCapacity = new System.Windows.Forms.Label();
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
-            this.lblRoomNumber = new System.Windows.Forms.Label();
-            this.txtBuilding = new System.Windows.Forms.TextBox();
-            this.lblBuilding = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClassrooms)).BeginInit();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtEndTime = new System.Windows.Forms.TextBox();
+            this.lblEndTime = new System.Windows.Forms.Label();
+            this.txtStartTime = new System.Windows.Forms.TextBox();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedules)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
             // 
+            // lblScheduleDay
+            // 
+            this.lblScheduleDay.AutoSize = true;
+            this.lblScheduleDay.Location = new System.Drawing.Point(293, 259);
+            this.lblScheduleDay.Name = "lblScheduleDay";
+            this.lblScheduleDay.Size = new System.Drawing.Size(95, 16);
+            this.lblScheduleDay.TabIndex = 143;
+            this.lblScheduleDay.Text = "Schedule Day:";
+            // 
+            // txtClassroomId
+            // 
+            this.txtClassroomId.Location = new System.Drawing.Point(478, 213);
+            this.txtClassroomId.Name = "txtClassroomId";
+            this.txtClassroomId.Size = new System.Drawing.Size(200, 22);
+            this.txtClassroomId.TabIndex = 142;
+            // 
+            // lblClassroomId
+            // 
+            this.lblClassroomId.AutoSize = true;
+            this.lblClassroomId.Location = new System.Drawing.Point(293, 219);
+            this.lblClassroomId.Name = "lblClassroomId";
+            this.lblClassroomId.Size = new System.Drawing.Size(91, 16);
+            this.lblClassroomId.TabIndex = 141;
+            this.lblClassroomId.Text = "Classroom ID:";
+            // 
+            // txtProfessorId
+            // 
+            this.txtProfessorId.Location = new System.Drawing.Point(478, 176);
+            this.txtProfessorId.Name = "txtProfessorId";
+            this.txtProfessorId.Size = new System.Drawing.Size(200, 22);
+            this.txtProfessorId.TabIndex = 140;
+            // 
+            // lblProfessorId
+            // 
+            this.lblProfessorId.AutoSize = true;
+            this.lblProfessorId.Location = new System.Drawing.Point(293, 179);
+            this.lblProfessorId.Name = "lblProfessorId";
+            this.lblProfessorId.Size = new System.Drawing.Size(84, 16);
+            this.lblProfessorId.TabIndex = 139;
+            this.lblProfessorId.Text = "Professor ID:";
+            // 
+            // txtSubjectId
+            // 
+            this.txtSubjectId.Location = new System.Drawing.Point(478, 139);
+            this.txtSubjectId.Name = "txtSubjectId";
+            this.txtSubjectId.Size = new System.Drawing.Size(200, 22);
+            this.txtSubjectId.TabIndex = 138;
+            // 
+            // lblSubjectId
+            // 
+            this.lblSubjectId.AutoSize = true;
+            this.lblSubjectId.Location = new System.Drawing.Point(293, 142);
+            this.lblSubjectId.Name = "lblSubjectId";
+            this.lblSubjectId.Size = new System.Drawing.Size(71, 16);
+            this.lblSubjectId.TabIndex = 137;
+            this.lblSubjectId.Text = "Subject ID:";
+            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(548, 275);
+            this.btnAdd.Location = new System.Drawing.Point(548, 377);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(130, 35);
-            this.btnAdd.TabIndex = 111;
-            this.btnAdd.Text = "Add Classroom";
+            this.btnAdd.TabIndex = 136;
+            this.btnAdd.Text = "Add Schedule";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dgvClassrooms
+            // dgvSchedules
             // 
-            this.dgvClassrooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClassrooms.BackgroundColor = System.Drawing.SystemColors.MenuBar;
-            this.dgvClassrooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClassrooms.Location = new System.Drawing.Point(715, 132);
-            this.dgvClassrooms.Name = "dgvClassrooms";
-            this.dgvClassrooms.RowHeadersWidth = 51;
-            this.dgvClassrooms.RowTemplate.Height = 24;
-            this.dgvClassrooms.Size = new System.Drawing.Size(550, 553);
-            this.dgvClassrooms.TabIndex = 108;
-            this.dgvClassrooms.SelectionChanged += new System.EventHandler(this.dgvClassrooms_SelectionChanged);
+            this.dgvSchedules.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSchedules.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dgvSchedules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSchedules.Location = new System.Drawing.Point(715, 132);
+            this.dgvSchedules.Name = "dgvSchedules";
+            this.dgvSchedules.RowHeadersWidth = 51;
+            this.dgvSchedules.RowTemplate.Height = 24;
+            this.dgvSchedules.Size = new System.Drawing.Size(550, 553);
+            this.dgvSchedules.TabIndex = 135;
             // 
             // lblTitle
             // 
@@ -83,9 +143,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(288, 59);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(290, 33);
-            this.lblTitle.TabIndex = 107;
-            this.lblTitle.Text = "Manage Classrooms";
+            this.lblTitle.Size = new System.Drawing.Size(271, 33);
+            this.lblTitle.TabIndex = 134;
+            this.lblTitle.Text = "Manage Schedules";
             // 
             // pnlSide
             // 
@@ -104,7 +164,7 @@
             this.pnlSide.Location = new System.Drawing.Point(1, 0);
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(249, 749);
-            this.pnlSide.TabIndex = 106;
+            this.pnlSide.TabIndex = 133;
             // 
             // btnDashboard
             // 
@@ -119,7 +179,6 @@
             this.btnDashboard.TabIndex = 22;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnLogout
             // 
@@ -134,7 +193,6 @@
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnManageStudents
             // 
@@ -149,7 +207,6 @@
             this.btnManageStudents.TabIndex = 12;
             this.btnManageStudents.Text = "Manage Students";
             this.btnManageStudents.UseVisualStyleBackColor = false;
-            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // btnViewLogs
             // 
@@ -164,7 +221,6 @@
             this.btnViewLogs.TabIndex = 20;
             this.btnViewLogs.Text = "View Logs";
             this.btnViewLogs.UseVisualStyleBackColor = false;
-            this.btnViewLogs.Click += new System.EventHandler(this.btnViewLogs_Click);
             // 
             // btnManageProfessor
             // 
@@ -179,7 +235,6 @@
             this.btnManageProfessor.TabIndex = 13;
             this.btnManageProfessor.Text = "Manage Professors";
             this.btnManageProfessor.UseVisualStyleBackColor = false;
-            this.btnManageProfessor.Click += new System.EventHandler(this.btnManageProfessor_Click);
             // 
             // btnViewStats
             // 
@@ -194,7 +249,6 @@
             this.btnViewStats.TabIndex = 19;
             this.btnViewStats.Text = "View Enrollment Stats";
             this.btnViewStats.UseVisualStyleBackColor = false;
-            this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
             // btnManageDepartments
             // 
@@ -209,7 +263,6 @@
             this.btnManageDepartments.TabIndex = 14;
             this.btnManageDepartments.Text = "Manage Departments";
             this.btnManageDepartments.UseVisualStyleBackColor = false;
-            this.btnManageDepartments.Click += new System.EventHandler(this.btnManageDepartments_Click);
             // 
             // btnViewEnrollments
             // 
@@ -222,13 +275,12 @@
             this.btnViewEnrollments.Name = "btnViewEnrollments";
             this.btnViewEnrollments.Size = new System.Drawing.Size(205, 40);
             this.btnViewEnrollments.TabIndex = 18;
-            this.btnViewEnrollments.Text = "View Enrollments";
+            this.btnViewEnrollments.Text = "Manage Enrollments";
             this.btnViewEnrollments.UseVisualStyleBackColor = false;
-            this.btnViewEnrollments.Click += new System.EventHandler(this.btnViewEnrollments_Click);
             // 
             // btnManageClassrooms
             // 
-            this.btnManageClassrooms.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnManageClassrooms.BackColor = System.Drawing.Color.SteelBlue;
             this.btnManageClassrooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnManageClassrooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageClassrooms.ForeColor = System.Drawing.Color.White;
@@ -239,11 +291,10 @@
             this.btnManageClassrooms.TabIndex = 15;
             this.btnManageClassrooms.Text = "Manage Classrooms";
             this.btnManageClassrooms.UseVisualStyleBackColor = false;
-            this.btnManageClassrooms.Click += new System.EventHandler(this.btnManageClassrooms_Click);
             // 
             // btnManageSchedules
             // 
-            this.btnManageSchedules.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageSchedules.BackColor = System.Drawing.Color.SkyBlue;
             this.btnManageSchedules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnManageSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageSchedules.ForeColor = System.Drawing.Color.White;
@@ -254,7 +305,6 @@
             this.btnManageSchedules.TabIndex = 17;
             this.btnManageSchedules.Text = "Manage Schedules";
             this.btnManageSchedules.UseVisualStyleBackColor = false;
-            this.btnManageSchedules.Click += new System.EventHandler(this.btnManageSchedules_Click);
             // 
             // btnManageSubjects
             // 
@@ -269,96 +319,93 @@
             this.btnManageSubjects.TabIndex = 16;
             this.btnManageSubjects.Text = "Manage Subjects";
             this.btnManageSubjects.UseVisualStyleBackColor = false;
-            this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
-            // txtCapacity
+            // comboBox1
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(478, 216);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(200, 22);
-            this.txtCapacity.TabIndex = 120;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "\"Monday\", ",
+            "\"Tuesday\", ",
+            "\"Wednesday\", ",
+            "\"Thursday\", ",
+            "\"Friday\""});
+            this.comboBox1.Location = new System.Drawing.Point(478, 251);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 144;
             // 
-            // lblCapacity
+            // txtEndTime
             // 
-            this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(293, 219);
-            this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(63, 16);
-            this.lblCapacity.TabIndex = 119;
-            this.lblCapacity.Text = "Capacity:";
+            this.txtEndTime.Location = new System.Drawing.Point(478, 327);
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(200, 22);
+            this.txtEndTime.TabIndex = 148;
             // 
-            // txtRoomNumber
+            // lblEndTime
             // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(478, 176);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(200, 22);
-            this.txtRoomNumber.TabIndex = 118;
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Location = new System.Drawing.Point(293, 330);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(145, 16);
+            this.lblEndTime.TabIndex = 147;
+            this.lblEndTime.Text = "End Time (HH:MM:SS):";
             // 
-            // lblRoomNumber
+            // txtStartTime
             // 
-            this.lblRoomNumber.AutoSize = true;
-            this.lblRoomNumber.Location = new System.Drawing.Point(293, 179);
-            this.lblRoomNumber.Name = "lblRoomNumber";
-            this.lblRoomNumber.Size = new System.Drawing.Size(98, 16);
-            this.lblRoomNumber.TabIndex = 117;
-            this.lblRoomNumber.Text = "Room Number:";
+            this.txtStartTime.Location = new System.Drawing.Point(478, 290);
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(200, 22);
+            this.txtStartTime.TabIndex = 146;
             // 
-            // txtBuilding
+            // lblStartTime
             // 
-            this.txtBuilding.Location = new System.Drawing.Point(478, 139);
-            this.txtBuilding.Name = "txtBuilding";
-            this.txtBuilding.Size = new System.Drawing.Size(200, 22);
-            this.txtBuilding.TabIndex = 116;
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(293, 293);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(148, 16);
+            this.lblStartTime.TabIndex = 145;
+            this.lblStartTime.Text = "Start Time (HH:MM:SS):";
             // 
-            // lblBuilding
-            // 
-            this.lblBuilding.AutoSize = true;
-            this.lblBuilding.Location = new System.Drawing.Point(293, 142);
-            this.lblBuilding.Name = "lblBuilding";
-            this.lblBuilding.Size = new System.Drawing.Size(58, 16);
-            this.lblBuilding.TabIndex = 115;
-            this.lblBuilding.Text = "Building:";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(548, 320);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 35);
-            this.btnDelete.TabIndex = 121;
-            this.btnDelete.Text = "Delete Classroom";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // ClassroomsForm
+            // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.txtCapacity);
-            this.Controls.Add(this.lblCapacity);
-            this.Controls.Add(this.txtRoomNumber);
-            this.Controls.Add(this.lblRoomNumber);
-            this.Controls.Add(this.txtBuilding);
-            this.Controls.Add(this.lblBuilding);
+            this.Controls.Add(this.txtEndTime);
+            this.Controls.Add(this.lblEndTime);
+            this.Controls.Add(this.txtStartTime);
+            this.Controls.Add(this.lblStartTime);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblScheduleDay);
+            this.Controls.Add(this.txtClassroomId);
+            this.Controls.Add(this.lblClassroomId);
+            this.Controls.Add(this.txtProfessorId);
+            this.Controls.Add(this.lblProfessorId);
+            this.Controls.Add(this.txtSubjectId);
+            this.Controls.Add(this.lblSubjectId);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvClassrooms);
+            this.Controls.Add(this.dgvSchedules);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlSide);
-            this.Name = "ClassroomsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student Information System - Manage Classrooms";
-            this.Load += new System.EventHandler(this.ClassroomsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClassrooms)).EndInit();
+            this.Name = "Form11";
+            this.Text = "Form11";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedules)).EndInit();
             this.pnlSide.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblScheduleDay;
+        private System.Windows.Forms.TextBox txtClassroomId;
+        private System.Windows.Forms.Label lblClassroomId;
+        private System.Windows.Forms.TextBox txtProfessorId;
+        private System.Windows.Forms.Label lblProfessorId;
+        private System.Windows.Forms.TextBox txtSubjectId;
+        private System.Windows.Forms.Label lblSubjectId;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvClassrooms;
+        private System.Windows.Forms.DataGridView dgvSchedules;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlSide;
         private System.Windows.Forms.Button btnDashboard;
@@ -366,18 +413,16 @@
         private System.Windows.Forms.Button btnManageStudents;
         private System.Windows.Forms.Button btnViewLogs;
         private System.Windows.Forms.Button btnManageProfessor;
+        private System.Windows.Forms.Button btnViewStats;
         private System.Windows.Forms.Button btnManageDepartments;
         private System.Windows.Forms.Button btnViewEnrollments;
         private System.Windows.Forms.Button btnManageClassrooms;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
-        private System.Windows.Forms.TextBox txtCapacity;
-        private System.Windows.Forms.Label lblCapacity;
-        private System.Windows.Forms.TextBox txtRoomNumber;
-        private System.Windows.Forms.Label lblRoomNumber;
-        private System.Windows.Forms.TextBox txtBuilding;
-        private System.Windows.Forms.Label lblBuilding;
-        private System.Windows.Forms.Button btnViewStats;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtEndTime;
+        private System.Windows.Forms.Label lblEndTime;
+        private System.Windows.Forms.TextBox txtStartTime;
+        private System.Windows.Forms.Label lblStartTime;
     }
 }

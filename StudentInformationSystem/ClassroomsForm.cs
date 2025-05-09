@@ -27,7 +27,7 @@ namespace StudentInformationSystem
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT building, room_number, capacity FROM classrooms";
+                    string query = "SELECT classroom_id, building, room_number, capacity FROM classrooms";
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                     {
                         System.Data.DataTable dt = new System.Data.DataTable();
@@ -46,6 +46,50 @@ namespace StudentInformationSystem
             }
         }
 
+        private bool IsValidCapacity(string capacityText, out int capacity)
+        {
+            // Check if the capacity is a valid integer
+            if (!int.TryParse(capacityText, out capacity))
+            {
+                MessageBox.Show("Capacity must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Check if capacity is positive and within a reasonable range (1 to 500)
+            if (capacity <= 0 || capacity > 500)
+            {
+                MessageBox.Show("Capacity must be between 1 and 500.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void LogAction(string action, string details)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string logQuery = "INSERT INTO logs (admin_id, action, details, log_date) VALUES (@admin_id, @action, @details, @log_date)";
+                    using (MySqlCommand cmd = new MySqlCommand(logQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@admin_id", loggedInAdminId);
+                        cmd.Parameters.AddWithValue("@action", action);
+                        cmd.Parameters.AddWithValue("@details", details);
+                        cmd.Parameters.AddWithValue("@log_date", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Failed to log action: " + ex.Message, "Logging Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtBuilding.Text) ||
@@ -56,9 +100,9 @@ namespace StudentInformationSystem
                 return;
             }
 
-            if (!int.TryParse(txtCapacity.Text, out int capacity) || capacity <= 0)
+            // Use the IsValidCapacity function to validate capacity
+            if (!IsValidCapacity(txtCapacity.Text, out int capacity))
             {
-                MessageBox.Show("Capacity must be a positive number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -76,13 +120,17 @@ namespace StudentInformationSystem
                         cmd.Parameters.AddWithValue("@capacity", capacity);
                         cmd.ExecuteNonQuery();
                     }
-
-                    MessageBox.Show("Classroom added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtBuilding.Text = "";
-                    txtRoomNumber.Text = "";
-                    txtCapacity.Text = "";
-                    LoadClassrooms();
                 }
+
+                // Log the action
+                string details = $"Added classroom: {txtBuilding.Text}-{txtRoomNumber.Text} with capacity {capacity}";
+                LogAction("Add Classroom", details);
+
+                MessageBox.Show("Classroom added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtBuilding.Text = "";
+                txtRoomNumber.Text = "";
+                txtCapacity.Text = "";
+                LoadClassrooms();
             }
             catch (MySqlException ex)
             {
@@ -92,6 +140,51 @@ namespace StudentInformationSystem
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvClassrooms.SelectedRows.Count > 0)
+            {
+                int classroomId = Convert.ToInt32(dgvClassrooms.SelectedRows[0].Cells["classroom_id"].Value);
+                string building = dgvClassrooms.SelectedRows[0].Cells["building"].Value.ToString();
+                string roomNumber = dgvClassrooms.SelectedRows[0].Cells["room_number"].Value.ToString();
+
+                try
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string deleteQuery = "DELETE FROM classrooms WHERE classroom_id = @classroom_id";
+                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@classroom_id", classroomId);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Log the action
+                    string details = $"Deleted classroom: {building}-{roomNumber}";
+                    LogAction("Delete Classroom", details);
+
+                    MessageBox.Show("Classroom deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadClassrooms();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a classroom to delete.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvClassrooms_SelectionChanged(object sender, EventArgs e)
+        {
+            btnDelete.Enabled = dgvClassrooms.SelectedRows.Count > 0;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
