@@ -202,5 +202,10 @@ namespace StudentInformationSystem
             loginForm.Show();
             this.Close();
         }
+
+        private void txtSubjectId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

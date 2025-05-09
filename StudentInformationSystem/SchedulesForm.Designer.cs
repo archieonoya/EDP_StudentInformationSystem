@@ -106,6 +106,7 @@
             this.txtSubjectId.Name = "txtSubjectId";
             this.txtSubjectId.Size = new System.Drawing.Size(200, 22);
             this.txtSubjectId.TabIndex = 138;
+            this.txtSubjectId.TextChanged += new System.EventHandler(this.txtSubjectId_TextChanged);
             // 
             // lblSubjectId
             // 
