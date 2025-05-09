@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSide = new System.Windows.Forms.Panel();
+            this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnManageStudents = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlSide.Controls.Add(this.btnManageUsers);
             this.pnlSide.Controls.Add(this.btnDashboard);
             this.pnlSide.Controls.Add(this.btnLogout);
             this.pnlSide.Controls.Add(this.btnManageStudents);
@@ -73,6 +75,21 @@
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(249, 749);
             this.pnlSide.TabIndex = 0;
+            // 
+            // btnManageUsers
+            // 
+            this.btnManageUsers.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageUsers.ForeColor = System.Drawing.Color.White;
+            this.btnManageUsers.Location = new System.Drawing.Point(22, 370);
+            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageUsers.Name = "btnManageUsers";
+            this.btnManageUsers.Size = new System.Drawing.Size(205, 40);
+            this.btnManageUsers.TabIndex = 23;
+            this.btnManageUsers.Text = "Manage Users";
+            this.btnManageUsers.UseVisualStyleBackColor = false;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // btnDashboard
             // 
@@ -214,7 +231,7 @@
             this.btnManageSchedules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnManageSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageSchedules.ForeColor = System.Drawing.Color.White;
-            this.btnManageSchedules.Location = new System.Drawing.Point(22, 372);
+            this.btnManageSchedules.Location = new System.Drawing.Point(22, 422);
             this.btnManageSchedules.Margin = new System.Windows.Forms.Padding(0);
             this.btnManageSchedules.Name = "btnManageSchedules";
             this.btnManageSchedules.Size = new System.Drawing.Size(205, 40);
@@ -384,16 +401,18 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlSide;
+        private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnManageStudents;
         private System.Windows.Forms.Button btnViewLogs;
+        private System.Windows.Forms.Button btnManageProfessor;
         private System.Windows.Forms.Button btnViewStats;
+        private System.Windows.Forms.Button btnManageDepartments;
         private System.Windows.Forms.Button btnViewEnrollments;
+        private System.Windows.Forms.Button btnManageClassrooms;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
-        private System.Windows.Forms.Button btnManageClassrooms;
-        private System.Windows.Forms.Button btnManageDepartments;
-        private System.Windows.Forms.Button btnManageProfessor;
-        private System.Windows.Forms.Button btnManageStudents;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblSubtitleRecentLogs;
         private System.Windows.Forms.Label lblTotalEnrollments;
@@ -404,7 +423,6 @@
         private System.Windows.Forms.Label lblTotalProfessors;
         private System.Windows.Forms.Label lblTotalStudents;
         private System.Windows.Forms.Label lblSubtitleSummary;
-        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label lblTitle;
     }
 }

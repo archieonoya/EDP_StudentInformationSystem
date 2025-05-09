@@ -57,10 +57,8 @@ namespace StudentInformationSystem
                 {
                     conn.Open();
 
-                    // Calculate the date 7 days ago
                     DateTime oneWeekAgo = DateTime.Now.AddDays(-7);
 
-                    // Use a parameterized query to filter logs from the last week
                     string query = "SELECT admin_id, table_name, action, change_details, log_date FROM logs WHERE log_date >= @oneWeekAgo ORDER BY log_date DESC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -166,6 +164,13 @@ namespace StudentInformationSystem
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            UserManagementForm userManagementForm = new UserManagementForm();
+            userManagementForm.Show();
+            this.Hide();
         }
     }
 }
