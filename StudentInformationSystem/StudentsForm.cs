@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ClosedXML.Excel;
 
 namespace StudentInformationSystem
 {
@@ -32,7 +34,7 @@ namespace StudentInformationSystem
                         LEFT JOIN departments d ON s.department_id = d.department_id";
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                     {
-                        System.Data.DataTable dt = new System.Data.DataTable();
+                        DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dgvStudents.DataSource = dt;
                     }
@@ -45,6 +47,60 @@ namespace StudentInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            if (dgvStudents.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to generate report.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Files|*.xlsx";
+                    sfd.FileName = $"Students_Report_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var workbook = new XLWorkbook())
+                        {
+                            var worksheet = workbook.Worksheets.Add("Students Report");
+
+                            // Add headers
+                            for (int i = 0; i < dgvStudents.Columns.Count; i++)
+                            {
+                                worksheet.Cell(1, i + 1).Value = dgvStudents.Columns[i].HeaderText;
+                                worksheet.Cell(1, i + 1).Style.Font.Bold = true;
+                            }
+
+                            // Add data rows
+                            for (int i = 0; i < dgvStudents.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < dgvStudents.Columns.Count; j++)
+                                {
+                                    worksheet.Cell(i + 2, j + 1).Value = dgvStudents.Rows[i].Cells[j].Value?.ToString();
+                                }
+                            }
+
+                            // Auto-fit columns and apply some styling
+                            worksheet.Columns().AdjustToContents();
+                            worksheet.Range(1, 1, 1, dgvStudents.Columns.Count).Style.Fill.BackgroundColor = XLColor.LightGray;
+
+                            workbook.SaveAs(sfd.FileName);
+                        }
+
+                        MessageBox.Show("Report generated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

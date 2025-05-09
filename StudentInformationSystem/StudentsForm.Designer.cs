@@ -43,6 +43,7 @@
             this.btnManageSubjects = new System.Windows.Forms.Button();
             this.btnEnroll = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
             this.pnlSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
@@ -263,11 +264,22 @@
             this.dgvStudents.Size = new System.Drawing.Size(971, 537);
             this.dgvStudents.TabIndex = 72;
             // 
+            // btnGenerateReport
+            // 
+            this.btnGenerateReport.Location = new System.Drawing.Point(990, 92);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Size = new System.Drawing.Size(130, 35);
+            this.btnGenerateReport.TabIndex = 73;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.UseVisualStyleBackColor = true;
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
+            // 
             // StudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
+            this.Controls.Add(this.btnGenerateReport);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnEnroll);
             this.Controls.Add(this.lblTitle);
@@ -300,5 +312,6 @@
         private System.Windows.Forms.Button btnManageSubjects;
         private System.Windows.Forms.Button btnEnroll;
         private System.Windows.Forms.DataGridView dgvStudents;
+        private System.Windows.Forms.Button btnGenerateReport;
     }
 }
