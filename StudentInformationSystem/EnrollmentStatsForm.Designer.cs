@@ -42,6 +42,9 @@
             this.btnManageClassrooms = new System.Windows.Forms.Button();
             this.btnManageSchedules = new System.Windows.Forms.Button();
             this.btnManageSubjects = new System.Windows.Forms.Button();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.btnFilterByDepartment = new System.Windows.Forms.Button();
+            this.lblLastUpdate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStats)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
@@ -252,11 +255,42 @@
             this.btnManageSubjects.UseVisualStyleBackColor = false;
             this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
+            // cmbDepartment
+            // 
+            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Location = new System.Drawing.Point(294, 92);
+            this.cmbDepartment.Name = "cmbDepartment";
+            this.cmbDepartment.Size = new System.Drawing.Size(200, 24);
+            this.cmbDepartment.TabIndex = 155;
+            // 
+            // btnFilterByDepartment
+            // 
+            this.btnFilterByDepartment.Location = new System.Drawing.Point(510, 92);
+            this.btnFilterByDepartment.Name = "btnFilterByDepartment";
+            this.btnFilterByDepartment.Size = new System.Drawing.Size(150, 35);
+            this.btnFilterByDepartment.TabIndex = 156;
+            this.btnFilterByDepartment.Text = "Filter by Department";
+            this.btnFilterByDepartment.UseVisualStyleBackColor = true;
+            this.btnFilterByDepartment.Click += new System.EventHandler(this.btnFilterByDepartment_Click);
+            // 
+            // lblLastUpdate
+            // 
+            this.lblLastUpdate.AutoSize = true;
+            this.lblLastUpdate.Location = new System.Drawing.Point(680, 95);
+            this.lblLastUpdate.Name = "lblLastUpdate";
+            this.lblLastUpdate.Size = new System.Drawing.Size(82, 16);
+            this.lblLastUpdate.TabIndex = 157;
+            this.lblLastUpdate.Text = "Last Update: ";
+            // 
             // EnrollmentStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
+            this.Controls.Add(this.lblLastUpdate);
+            this.Controls.Add(this.btnFilterByDepartment);
+            this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.dgvStats);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlSide);
@@ -268,7 +302,6 @@
             this.pnlSide.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -287,5 +320,8 @@
         private System.Windows.Forms.Button btnManageClassrooms;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
+        private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.Button btnFilterByDepartment;
+        private System.Windows.Forms.Label lblLastUpdate;
     }
 }

@@ -53,6 +53,8 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtProfessorId = new System.Windows.Forms.TextBox();
+            this.btnViewSubjects = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessors)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
@@ -353,11 +355,30 @@
             this.lblFirstName.TabIndex = 109;
             this.lblFirstName.Text = "First Name:";
             // 
+            // txtProfessorId
+            // 
+            this.txtProfessorId.Location = new System.Drawing.Point(481, 412);
+            this.txtProfessorId.Name = "txtProfessorId";
+            this.txtProfessorId.Size = new System.Drawing.Size(200, 22);
+            this.txtProfessorId.TabIndex = 122;
+            // 
+            // btnViewSubjects
+            // 
+            this.btnViewSubjects.Location = new System.Drawing.Point(551, 452);
+            this.btnViewSubjects.Name = "btnViewSubjects";
+            this.btnViewSubjects.Size = new System.Drawing.Size(130, 35);
+            this.btnViewSubjects.TabIndex = 123;
+            this.btnViewSubjects.Text = "View Subjects";
+            this.btnViewSubjects.UseVisualStyleBackColor = true;
+            this.btnViewSubjects.Click += new System.EventHandler(this.btnViewSubjects_Click);
+            // 
             // ProfessorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
+            this.Controls.Add(this.btnViewSubjects);
+            this.Controls.Add(this.txtProfessorId);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDepartmentId);
             this.Controls.Add(this.lblDepartmentId);
@@ -409,5 +430,7 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.TextBox txtProfessorId;
+        private System.Windows.Forms.Button btnViewSubjects;
     }
 }

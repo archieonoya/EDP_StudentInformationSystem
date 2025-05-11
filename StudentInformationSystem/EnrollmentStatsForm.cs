@@ -15,21 +15,41 @@ namespace StudentInformationSystem
 
         private void EnrollmentStatsForm_Load(object sender, EventArgs e)
         {
+            LoadDepartments();
             LoadStats();
             HighlightCurrentButton(btnViewStats);
+        }
+
+        private void LoadDepartments()
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT department_id, department_name FROM departments";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        cmbDepartment.DataSource = dt;
+                        cmbDepartment.DisplayMember = "department_name";
+                        cmbDepartment.ValueMember = "department_id";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading departments: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadStats()
         {
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"]?.ConnectionString;
-                if (string.IsNullOrEmpty(connectionString))
-                {
-                    MessageBox.Show("Connection string 'MySqlConnection' not found in configuration.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -60,6 +80,19 @@ namespace StudentInformationSystem
                             dgvStats.Columns["EnrollmentCount"].HeaderText = "Enrollment Count";
                         }
                     }
+
+                    // Verify DailyEnrollmentStatsUpdate event
+                    query = "SELECT * FROM enrollment_stats ORDER BY stat_date DESC LIMIT 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                lblLastUpdate.Text = $"Last Update: {reader["stat_date"]} - Enrollments: {reader["total_enrollments"]}";
+                            }
+                        }
+                    }
                 }
             }
             catch (MySqlException ex)
@@ -69,6 +102,33 @@ namespace StudentInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFilterByDepartment_Click(object sender, EventArgs e)
+        {
+            if (cmbDepartment.SelectedValue == null) return;
+
+            int departmentId = Convert.ToInt32(cmbDepartment.SelectedValue);
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    var cmd = new MySqlCommand("GetAllStudentsInDepartment", conn) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.AddWithValue("@p_department_id", departmentId);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgvStats.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error filtering by department: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

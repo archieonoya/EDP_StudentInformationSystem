@@ -42,6 +42,12 @@
             this.btnManageClassrooms = new System.Windows.Forms.Button();
             this.btnManageSchedules = new System.Windows.Forms.Button();
             this.btnManageSubjects = new System.Windows.Forms.Button();
+            this.txtStudentId = new System.Windows.Forms.TextBox();
+            this.txtSubjectId = new System.Windows.Forms.TextBox();
+            this.lblStudentId = new System.Windows.Forms.Label();
+            this.lblSubjectId = new System.Windows.Forms.Label();
+            this.btnEnroll = new System.Windows.Forms.Button();
+            this.btnDeleteEnrollment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedules)).BeginInit();
             this.pnlSide.SuspendLayout();
             this.SuspendLayout();
@@ -252,11 +258,69 @@
             this.btnManageSubjects.UseVisualStyleBackColor = false;
             this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
             // 
+            // txtStudentId
+            // 
+            this.txtStudentId.Location = new System.Drawing.Point(372, 92);
+            this.txtStudentId.Name = "txtStudentId";
+            this.txtStudentId.Size = new System.Drawing.Size(150, 22);
+            this.txtStudentId.TabIndex = 152;
+            // 
+            // txtSubjectId
+            // 
+            this.txtSubjectId.Location = new System.Drawing.Point(624, 92);
+            this.txtSubjectId.Name = "txtSubjectId";
+            this.txtSubjectId.Size = new System.Drawing.Size(150, 22);
+            this.txtSubjectId.TabIndex = 153;
+            // 
+            // lblStudentId
+            // 
+            this.lblStudentId.AutoSize = true;
+            this.lblStudentId.Location = new System.Drawing.Point(294, 95);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(72, 16);
+            this.lblStudentId.TabIndex = 154;
+            this.lblStudentId.Text = "Student ID:";
+            // 
+            // lblSubjectId
+            // 
+            this.lblSubjectId.AutoSize = true;
+            this.lblSubjectId.Location = new System.Drawing.Point(546, 95);
+            this.lblSubjectId.Name = "lblSubjectId";
+            this.lblSubjectId.Size = new System.Drawing.Size(72, 16);
+            this.lblSubjectId.TabIndex = 155;
+            this.lblSubjectId.Text = "Subject ID:";
+            // 
+            // btnEnroll
+            // 
+            this.btnEnroll.Location = new System.Drawing.Point(1135, 92);
+            this.btnEnroll.Name = "btnEnroll";
+            this.btnEnroll.Size = new System.Drawing.Size(130, 35);
+            this.btnEnroll.TabIndex = 156;
+            this.btnEnroll.Text = "Enroll";
+            this.btnEnroll.UseVisualStyleBackColor = true;
+            this.btnEnroll.Click += new System.EventHandler(this.btnEnroll_Click);
+            // 
+            // btnDeleteEnrollment
+            // 
+            this.btnDeleteEnrollment.Location = new System.Drawing.Point(990, 92);
+            this.btnDeleteEnrollment.Name = "btnDeleteEnrollment";
+            this.btnDeleteEnrollment.Size = new System.Drawing.Size(130, 35);
+            this.btnDeleteEnrollment.TabIndex = 157;
+            this.btnDeleteEnrollment.Text = "Delete Enrollment";
+            this.btnDeleteEnrollment.UseVisualStyleBackColor = true;
+            this.btnDeleteEnrollment.Click += new System.EventHandler(this.btnDeleteEnrollment_Click);
+            // 
             // EnrollmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 748);
+            this.Controls.Add(this.btnDeleteEnrollment);
+            this.Controls.Add(this.btnEnroll);
+            this.Controls.Add(this.lblSubjectId);
+            this.Controls.Add(this.lblStudentId);
+            this.Controls.Add(this.txtSubjectId);
+            this.Controls.Add(this.txtStudentId);
             this.Controls.Add(this.dgvSchedules);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlSide);
@@ -286,5 +350,11 @@
         private System.Windows.Forms.Button btnManageClassrooms;
         private System.Windows.Forms.Button btnManageSchedules;
         private System.Windows.Forms.Button btnManageSubjects;
+        private System.Windows.Forms.TextBox txtStudentId;
+        private System.Windows.Forms.TextBox txtSubjectId;
+        private System.Windows.Forms.Label lblStudentId;
+        private System.Windows.Forms.Label lblSubjectId;
+        private System.Windows.Forms.Button btnEnroll;
+        private System.Windows.Forms.Button btnDeleteEnrollment;
     }
 }

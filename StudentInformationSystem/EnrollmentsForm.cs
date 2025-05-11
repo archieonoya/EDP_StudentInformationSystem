@@ -85,6 +85,72 @@ namespace StudentInformationSystem
             }
         }
 
+        private void btnEnroll_Click(object sender, EventArgs e)
+        {
+            int studentId = int.Parse(txtStudentId.Text); // Assume TextBox for student ID
+            int subjectId = int.Parse(txtSubjectId.Text); // Assume TextBox for subject ID
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO enrollment (student_id, subject_id, enrollment_date, admin_id) VALUES (@studentId, @subjectId, CURDATE(), 1)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@studentId", studentId);
+                        cmd.Parameters.AddWithValue("@subjectId", subjectId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Student enrolled successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadEnrollments();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDeleteEnrollment_Click(object sender, EventArgs e)
+        {
+            if (dgvSchedules.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an enrollment to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int enrollmentId = Convert.ToInt32(dgvSchedules.SelectedRows[0].Cells["EnrollmentID"].Value);
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM enrollment WHERE enrollment_id = @enrollmentId";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@enrollmentId", enrollmentId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Enrollment deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadEnrollments();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             var dashboardForm = new DashboardForm();

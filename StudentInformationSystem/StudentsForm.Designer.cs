@@ -314,4 +314,4 @@
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnGenerateReport;
     }
-}
+}   

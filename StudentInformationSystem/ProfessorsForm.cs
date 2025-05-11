@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -164,6 +165,37 @@ namespace StudentInformationSystem
             txtContact.Text = "";
             txtEmail.Text = "";
             txtDepartmentId.Text = "";
+        }
+
+        private void btnViewSubjects_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtProfessorId.Text))
+            {
+                MessageBox.Show("Please enter a professor ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int professorId = int.Parse(txtProfessorId.Text);
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    var cmd = new MySqlCommand("GetProfessorSubjects", conn) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.AddWithValue("@professor_id", professorId);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgvProfessors.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error viewing subjects: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
