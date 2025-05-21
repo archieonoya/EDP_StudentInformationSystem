@@ -1,7 +1,4 @@
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.AssemblyReference.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.exe.config
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.exe
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\StudentInformationSystem.pdb
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.ClassroomsForm.resources
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.DashboardForm.resources
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.DepartmentsForm.resources
@@ -16,8 +13,6 @@ C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformation
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.SubjectsForm.resources
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.GenerateResource.cache
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.CoreCompileInputs.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.exe
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.pdb
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Google.Protobuf.dll
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\K4os.Compression.LZ4.dll
@@ -73,4 +68,13 @@ C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformation
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\RBush.xml
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\SixLabors.Fonts.xml
 C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.csproj.SuggestedBindingRedirects.cache
-C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\StudentInformationSystem.exe.config
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Student Information System.exe.config
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Student Information System.exe.manifest
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Student Information System.application
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Student Information System.exe
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\bin\Debug\Student Information System.pdb
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\Student Information System.exe.config
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\Student Information System.exe.manifest
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\Student Information System.application
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\Student Information System.exe
+C:\Users\Archie\Documents\GitHub\EDP_StudentInformationSystem\StudentInformationSystem\obj\Debug\Student Information System.pdb
